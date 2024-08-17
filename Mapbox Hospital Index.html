@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Add custom markers in Mapbox GL JS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+  <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
+  <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      overflow: hidden;
+    }
+
+    #map {
+      flex: 1;
+      height: 100vh;
+    }
+
+    #sidebar {
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      width: 600px;
+      height: calc(100vh - 100px);
+      overflow-y: auto;
+      background-color: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(15px);
+      padding: 25px;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    #sidebar::-webkit-scrollbar {
+      display: none;
+    }
+
+    #sidebar {
+      scroll-behavior: smooth;
+    }
+
+    #pinList {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .sidebar-item {
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar-item:hover {
+      background-color: rgba(255,255,255,0.05);
+    }
+    
+    .sidebar-content p {
+      margin: 5px 0 0;
+      color: #666;
+      font-family: Helvetica;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .sidebar-content h3 {
+      margin: 0;
+      font-size: 22px;
+      font-family: Helvetica;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .wait-time {
+      font-size: 25px;
+      font-weight: bold;
+      color: #000;
+      margin-left: 10px;
+      text-align: right;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .button {
+      background-color: rgba(74,135,255,0.13);
+      color: #004a87;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 24px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+      flex: 1;
+      margin: 0 5px;
+      font-family: Helvetica;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: rgba(74,135,255,0.8);
+      color: #FFFFFF;
+    }
+
+    .marker {
+      background-image: url('pin.png'); /* Replace with your custom pin image */
+      background-size: cover;
+      width: 55px; /* Adjust size as needed */
+      height: 70px; /* Adjust size as needed */
+      position: absolute; /* Ensure the marker is positioned absolutely */
+      transform: translate(-50%, -200%); /* Center the marker above the point */
+    }
+
+
+    .marker-text {
+      position: absolute;
+      bottom: 30px; /* Adjust position inside the pin */
+      width: 100%;
+      font-size: 11px; /* Adjust text size as needed */
+      font-weight: bold;
+      color: #FFFFFF; /* Adjust text color */
+      text-align: center;
+      border-radius: 5px; /* Optional: Add border radius for better appearance */
+    }
+
+    .highlight {
+      border: 3px solid #004a87; /* Highlight border color */
+      background-color: #f0f8ff; /* Optional: background color change */
+    }
+
+    
+  </style>
+</head>
+<body>
+  <div id="sidebar">
+    <ul id="pinList"></ul>
+  </div>
+  <div id="map"></div>
+
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoiam9ubnlvIiwiYSI6ImNsenlmamY2bjExZzgybHE0MzRkb21rNTMifQ.66c7t6FBoih2z_rz26SECA';
+
+    const geojson = {
+      type: 'FeatureCollection',
+      features: [
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-79.376, 43.721]
+          },
+          properties: {
+            title: 'SunnyBrook Hospital',
+            description: '2h 59m',
+            address: '2075 Bayview Ave, Toronto, ON M4N 3M5'
+          }
+        },
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-79.3872, 43.6584]
+          },
+          properties: {
+            title: 'Toronto General Hospital',
+            description: '1h 10m',
+            address: '190 Elizabeth St, Toronto, ON M5G 2C4'
+          }
+        },
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-79.597977,43.729351]
+          },
+          properties: {
+            title: 'Etobicoke (William Osler Health System)',
+            description: '0h 58m',
+            address: '101 Humber College Blvd, Etobicoke ON M9V 1R8'
+          }
+        }, 
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-79.870110, 43.496613]
+          },
+          properties: {
+            title: 'Milton District (Halton Healthcare)',
+            description: '1h 1m',
+            address: '7030 Derry Rd, Milton ON L9T 7H6'
+          }
+        }, 
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-79.898178, 43.260189]
+          },
+          properties: {
+            title: 'West End Urgent Care Centre',
+            description: '10h 20m',
+            address: '690 Main St W, Hamilton ON L8S 1A4'
+          }
+        }, 
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-78.869095, 43.905514]
+          },
+          properties: {
+            title: 'Oshawa (Lakeridge Health)',
+            description: '1h 26m',
+            address: '1 Hospital Ct, Oshawa ON L1G 2B9'
+          }
+        }, 
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-79.542038, 43.188080]
+          },
+          properties: {
+            title: 'West Lincoln Memorial Hospital',
+            description: '1h 26m',
+            address: '169 Main St E, Grimsby ON L3M 1P3'
+          }
+        }, 
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-79.01716831411898, 43.83753451412123]
+          },
+          properties: {
+            title: 'Lakeridge Health Ajax Pickering Hospital',
+            description: '2h 57m',
+            address: '580 Harwood Ave S, Ajax, ON L1S 2J4'
+          }
+        }, 
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-79.85471728901351, 43.262142318579855]
+          },
+          properties: {
+            title: 'Hamilton General Hospital',
+            description: '3h 3m',
+            address: '237 Barton St E, Hamilton, ON L8L 2X2'
+          }
+        }, 
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-75.6513351600864, 45.40101876998512]
+          },
+          properties: {
+            title: 'Childrens Hospital of Eastern Ontario',
+            description: '3h 21m',
+            address: '401 Smyth Rd, Ottawa, ON K1H 8L1'
+          }
+        }, 
+        {
+          type: 'Feature',
+          geometry: {
+            type: 'Point',
+            coordinates: [-79.75111224666786, 43.69045465932401]
+          },
+          properties: {
+            title: 'Peel Memorial Urgent Care',
+            description: '1h 38m',
+            address: '20 Lynch St, Brampton, ON L6W 2Z8'
+          }
+        },
+      ]
+    };
+
+    const map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/standard',
+      center: [-79.435, 43.698],
+      zoom: 11
+    });
+
+    for (const feature of geojson.features) {
+      const el = document.createElement('div');
+      el.className = 'marker';
+
+      const textEl = document.createElement('div');
+      textEl.className = 'marker-text';
+      textEl.textContent = feature.properties.description;
+
+      el.appendChild(textEl);
+
+      new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
+
+      const listItem = document.createElement('li');
+      listItem.className = 'sidebar-item';
+      listItem.id = `item-${geojson.features.indexOf(feature)}`; // Assign a unique ID
+      listItem.dataset.coords = feature.geometry.coordinates.join(',');
+      listItem.innerHTML = `
+        <div class="sidebar-content">
+          <h3>
+            <span>${feature.properties.title}</span>
+            <span class="wait-time">${feature.properties.description}</span>
+          </h3>
+          <p>${feature.properties.address}</p>
+          <div class="button-container">
+            <button class="button action-button" data-action="questions">QUESTIONS</button>
+            <button class="button action-button" data-action="call">CALL</button>
+            <button class="button action-button" data-action="directions">DIRECTION</button>
+          </div>
+        </div>
+      `;
+
+      // Add event listener for highlighting and scrolling when clicking a sidebar item
+      listItem.addEventListener('click', () => {
+        scrollToAndHighlight(listItem.id);
+      });
+
+
+      listItem.querySelectorAll('.action-button').forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const action = e.target.dataset.action;
+          switch(action) {
+            case 'questions':
+              window.open(feature.properties.website, '_blank');
+              break;
+            case 'call':
+              alert('Calling hospital: ' + feature.properties.title);
+              break;
+            case 'directions':
+              alert('Getting directions to: ' + feature.properties.title);
+              break;
+          }
+        });
+      });
+
+      document.getElementById('pinList').appendChild(listItem);
+    }
+
+    window.onload = () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const userCoords = [position.coords.longitude, position.coords.latitude];
+            map.flyTo({ center: userCoords, zoom: 25 });
+
+            new mapboxgl.Marker({ color: 'red' })
+              .setLngLat(userCoords)
+              .addTo(map);
+          },
+          (error) => {
+            switch(error.code) {
+              case error.PERMISSION_DENIED:
+                alert('Location access was denied. Please allow access to use this feature.');
+                break;
+              case error.POSITION_UNAVAILABLE:
+                alert('Location information is unavailable.');
+                break;
+              case error.TIMEOUT:
+                alert('The request to get your location timed out. Please try again.');
+                break;
+              case error.UNKNOWN_ERROR:
+                alert('An unknown error occurred while trying to access your location.');
+                break;
+            }
+          }
+        );
+      } else {
+        alert('Geolocation is not supported by your browser.');
+      }
+    };
+
+    // Function to scroll the sidebar to the specific item and highlight it
+    function scrollToAndHighlight(id) {
+      const sidebar = document.getElementById('sidebar');
+      const item = document.getElementById(id);
+
+      if (item) {
+        // Remove highlight from all items
+        document.querySelectorAll('.sidebar-item').forEach(el => el.classList.remove('highlight'));
+
+        // Add highlight to the specific item
+        item.classList.add('highlight');
+
+        // Scroll item into view and center it if possible
+        item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    // Add event listener for sidebar items
+    document.querySelectorAll('.sidebar-item').forEach(item => {
+      item.addEventListener('click', function() {
+        scrollToAndHighlight(this.id);
+      });
+    });
+
+    // Modify pin click event to also scroll and highlight the related sidebar item
+    document.querySelectorAll('.marker').forEach((marker, index) => {
+      marker.addEventListener('click', () => {
+        const relatedItem = document.querySelector(`#pinList li:nth-child(${index + 1})`);
+        if (relatedItem) {
+          scrollToAndHighlight(relatedItem.id);
+        }
+        map.flyTo({ center: geojson.features[index].geometry.coordinates });
+      });
+    });
+
+
+  </script>
+</body>
+</html>
