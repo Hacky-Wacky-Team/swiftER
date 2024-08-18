@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>One Question at a Time Form</title>
+  <link href="questionsstyle.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <main>
+    <div class="content">
+      <img src="./Pictures/logo.png" alt="MLH Logo" style="width: 90px; height: 90; margin-bottom: -25px">
+      <h1>Welcome to SwiftER</h1>
+      <h3>To better help your needs, are you currently experiencing any of the following symptoms:</h3><br>
+      <p>Severe Physical Trauma, Severe Abdominal Pain, Severe Headaches, Serious Bleeding, Coughing up Blood, Sudden Chest Pain, Severe Shortness of Breath or Poisoning</p><br>
+
+      <p>If you believe your case is an emergency, please press "Yes"</p><br>
+
+      <p class="small-text">*Minor aches, fainting with no injury, and colds are not considered emergency cases</p><br>
+
+      <div class="button-container1">
+        <button class="button_yes">
+          <svg class="svg-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 13l4 4L19 7" stroke="#056dfa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="label1">Yes</span>
+        </button>
+
+        <button class="button_no">
+          <svg class="svg-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6 18L18 6M6 6l12 12" stroke="#db4237" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span class="label1">No</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="warning" style="display:none;">
+      <span class="title">✋ Woah There!</span>
+      <p class="description">
+        Looks like your case might not qualify as an "emergency". Help reduce the wait and visit your local doctor instead or call 811 for assistance!
+      </p>
+      <p class="description">If you still believe you need to go to the ER, press continue.</p>
+      <div class="actions">
+        <a href="https://www.concordia.ca/cunews/offices/provost/health/topics/emergency-room-when-to-go.html" class="pref">
+          View more info
+        </a>
+        <button class="accept">
+          Continue
+        </button>
+      </div>
+    </div>
+
+    <!-- Form initially hidden -->
+    <form id="question-form" action="/my-handling-form-page" method="post" style="display:none;">
+      </div>
+      <div class="question-container" id="question-1">
+        <div class="input-container">
+          <input type="text" id="name" name="user_name" required>
+          <label for="name" class="label">Name</label>
+          <div class="underline"></div>
+        </div>
+        <div class="button-container">
+  <button class="button back-button" onclick="goBack()">
+    <svg class="svg-icon" width="24" viewBox="0 0 24 24" height="24" fill="none">
+      <g stroke-width="2" stroke-linecap="round" stroke="#056dfa" fill-rule="evenodd" clip-rule="evenodd">
+        <path d="M20 12H4M10 18l-6-6 6-6"/>
+      </g>
+    </svg>
+    <span class="lable">Back</span>
+  </button>
+
+        <button class="button next-button" onclick="goNext()">
+            <span class="lable">Next</span>
+            <svg class="svg-icon" width="24" viewBox="0 0 24 24" height="24" fill="none">
+              <g stroke-width="2" stroke-linecap="round" stroke="#056dfa" fill-rule="evenodd" clip-rule="evenodd">
+                <path d="M4 12h16M14 6l6 6-6 6"/>
+              </g>
+            </svg>
+          </button>
+        </div>
+
+
+      </div>
+
+      <div class="question-container" id="question-2" style="display:none;">
+        </button>
+        <div class="input-container">
+          <input type="text" id="phone" name="phone_number" required>
+          <label for="phone" class="label">Phone Number</label>
+          <div class="underline"></div>
+        </div>
+        <div class="button-container">
+  <button class="button back-button" onclick="goBack()">
+    <svg class="svg-icon" width="24" viewBox="0 0 24 24" height="24" fill="none">
+      <g stroke-width="2" stroke-linecap="round" stroke="#056dfa" fill-rule="evenodd" clip-rule="evenodd">
+        <path d="M20 12H4M10 18l-6-6 6-6"/>
+      </g>
+    </svg>
+    <span class="lable">Back</span>
+  </button>
+
+  <button class="button next-button" onclick="goNext()">
+    <span class="lable">Next</span>
+    <svg class="svg-icon" width="24" viewBox="0 0 24 24" height="24" fill="none">
+      <g stroke-width="2" stroke-linecap="round" stroke="#056dfa" fill-rule="evenodd" clip-rule="evenodd">
+        <path d="M4 12h16M14 6l6 6-6 6"/>
+      </g>
+    </svg>
+  </button>
+</div>
+
+
+      </div>
+
+      <div class="question-container" id="question-3" style="display:none;">
+        <div class="input-container">
+          <input type="date" id="birthday" name="user_birthday" class="styled-input" required>
+          <label for="birthday" class="label">Birthday</label>
+          <div class="underline"></div>
+        </div>
+        <div class="button-container">
+  <button class="button back-button" onclick="goBack()">
+    <svg class="svg-icon" width="24" viewBox="0 0 24 24" height="24" fill="none">
+      <g stroke-width="2" stroke-linecap="round" stroke="#056dfa" fill-rule="evenodd" clip-rule="evenodd">
+        <path d="M20 12H4M10 18l-6-6 6-6"/>
+      </g>
+    </svg>
+    <span class="lable">Back</span>
+  </button>
+
+        <button class="button next-button" onclick="goNext()">
+            <span class="lable">Next</span>
+            <svg class="svg-icon" width="24" viewBox="0 0 24 24" height="24" fill="none">
+              <g stroke-width="2" stroke-linecap="round" stroke="#056dfa" fill-rule="evenodd" clip-rule="evenodd">
+                <path d="M4 12h16M14 6l6 6-6 6"/>
+              </g>
+            </svg>
+          </button>
+        </div>
+
+
+      </div>
+
+      <div class="question-container" id="question-4" style="display:none;">
+        <div class="input-container">
+          <input type="number" id="health_card" name="healthcard_number" class="styled-input" required>
+          <label for="health_card" class="label">Health Card Number</label>
+          <div class="underline"></div>
+        </div>
+        <div class="button-container">
+  <button class="button back-button" onclick="goBack()">
+    <svg class="svg-icon" width="24" viewBox="0 0 24 24" height="24" fill="none">
+      <g stroke-width="2" stroke-linecap="round" stroke="#056dfa" fill-rule="evenodd" clip-rule="evenodd">
+        <path d="M20 12H4M10 18l-6-6 6-6"/>
+      </g>
+    </svg>
+    <span class="lable">Back</span>
+  </button>
+
+        <button class="button next-button" onclick="goNext()">
+            <span class="lable">Next</span>
+            <svg class="svg-icon" width="24" viewBox="0 0 24 24" height="24" fill="none">
+              <g stroke-width="2" stroke-linecap="round" stroke="#056dfa" fill-rule="evenodd" clip-rule="evenodd">
+                <path d="M4 12h16M14 6l6 6-6 6"/>
+              </g>
+            </svg>
+          </button>
+        </div>
+
+
+      </div>
+
+      <div class="question-container" id="question-5" style="display:none;">
+        <div class="input-container">
+          <input type="tel" id="emergency_phone" name="user_emergency_phone" class="styled-input" required>
+          <label for="emergency_phone" class="label">Emergency Contact</label>
+          <div class="underline"></div>
+        </div>
+        <div class="button-container">
+  <button class="button back-button" onclick="goBack()">
+    <svg class="svg-icon" width="24" viewBox="0 0 24 24" height="24" fill="none">
+      <g stroke-width="2" stroke-linecap="round" stroke="#056dfa" fill-rule="evenodd" clip-rule="evenodd">
+        <path d="M20 12H4M10 18l-6-6 6-6"/>
+      </g>
+    </svg>
+    <span class="lable">Back</span>
+  </button>
+
+        <button class="button next-button" onclick="goNext()">
+            <span class="lable">Next</span>
+            <svg class="svg-icon" width="24" viewBox="0 0 24 24" height="24" fill="none">
+              <g stroke-width="2" stroke-linecap="round" stroke="#056dfa" fill-rule="evenodd" clip-rule="evenodd">
+                <path d="M4 12h16M14 6l6 6-6 6"/>
+              </g>
+            </svg>
+          </button>
+        </div>
+
+
+      </div>
+
+      <div class="question-container" id="question-6" style="display:none;">
+        <div class="input-container">
+          <input type="text" id="conditions" name="medical_conditions" class="styled-input" required>
+          <label for="conditions" class="label">Medical Conditions</label>
+          <div class="underline"></div>
+        </div>
+        <div class="button-container">
+  <button class="button back-button" onclick="goBack()">
+    <svg class="svg-icon" width="24" viewBox="0 0 24 24" height="24" fill="none">
+      <g stroke-width="2" stroke-linecap="round" stroke="#056dfa" fill-rule="evenodd" clip-rule="evenodd">
+        <path d="M20 12H4M10 18l-6-6 6-6"/>
+      </g>
+    </svg>
+    <span class="lable">Back</span>
+  </button>
+
+        <button class="button next-button" onclick="goNext()">
+            <span class="lable">Next</span>
+            <svg class="svg-icon" width="24" viewBox="0 0 24 24" height="24" fill="none">
+              <g stroke-width="2" stroke-linecap="round" stroke="#056dfa" fill-rule="evenodd" clip-rule="evenodd">
+                <path d="M4 12h16M14 6l6 6-6 6"/>
+              </g>
+            </svg>
+          </button>
+        </div>
+
+
+      </div>
+
+      <div class="question-container" id="question-7" style="display:none;">
+        <div class="input-container">
+          <input type="text" id="symptoms" name="user_symptoms" class="styled-input" required>
+          <label for="symptoms" class="label">Current Symptoms</label>
+          <div class="underline"></div>
+        </div>
+        <div class="button-container">
+  <button class="button back-button" onclick="goBack()">
+    <svg class="svg-icon" width="24" viewBox="0 0 24 24" height="24" fill="none">
+      <g stroke-width="2" stroke-linecap="round" stroke="#056dfa" fill-rule="evenodd" clip-rule="evenodd">
+        <path d="M20 12H4M10 18l-6-6 6-6"/>
+      </g>
+    </svg>
+    <span class="lable">Back</span>
+  </button>
+
+        <button class="button next-button" onclick="goNext()">
+            <span class="lable">Next</span>
+            <svg class="svg-icon" width="24" viewBox="0 0 24 24" height="24" fill="none">
+              <g stroke-width="2" stroke-linecap="round" stroke="#056dfa" fill-rule="evenodd" clip-rule="evenodd">
+                <path d="M4 12h16M14 6l6 6-6 6"/>
+              </g>
+            </svg>
+          </button>
+        </div>
+
+
+      </div>
+
+      <div class="question-container" id="question-submit" style="display:none;">
+        <div class="summary-container">
+          <h2>Summary</h2>
+          <div id="summary-content">
+          </div>
+          <input type="button" value="Submit" class="submit-button">
+        </div>
+        <div class="button-container">
+          <button class="button back-button" onclick="goBack()">
+            <svg class="svg-icon" width="24" viewBox="0 0 24 24" height="24" fill="none">
+              <g stroke-width="2" stroke-linecap="round" stroke="#056dfa" fill-rule="evenodd" clip-rule="evenodd">
+                <path d="M20 12H4M10 18l-6-6 6-6"/>
+              </g>
+            </svg>
+            <span class="lable">Back</span>
+          </button>
+        </div>
+      </div>
+    </form>
+
+    <div class="receipt" style="display:none;">
+      <div class="receipt work">
+        <div class="img-section">
+          <svg class="cross-icon" xmlns="http://www.w3.org/2000/svg" height="76" width="76" viewBox="0 0 24 24" fill="none" stroke="#3471ad" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 4v16m-8-8h16" />
+          </svg>
+        </div>
+        <div class="receipt-desc">
+          <div class="receipt-header">
+            <div class="receipt-title">Confirmation Ticket</div>
+            <div class="receipt-menu">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+          <div class="receipt-time">#4032</div>
+          <p class="recent">Show ticket at front desk</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const buttonYes = document.querySelector('.button_yes');
+      const buttonNo = document.querySelector('.button_no');
+      const submit = document.querySelector('.submit-button');
+      const content = document.querySelector('.content');
+      const form = document.getElementById('question-form');
+      const warning = document.querySelector('.warning');
+      const receipt = document.querySelector('.receipt');
+      const questions = document.querySelectorAll('.question-container');
+      const summaryContent = document.getElementById('summary-content');
+      let currentQuestionIndex = 0;
+
+      const answers = {};
+
+      function showQuestion(index) {
+        questions.forEach((question, i) => {
+          question.style.display = (i === index) ? 'block' : 'none';
+        });
+      }
+
+      function goNext() {
+        if (currentQuestionIndex < questions.length - 1) {
+          // Save the answer
+          const currentQuestion = document.querySelector(`#question-${currentQuestionIndex + 1}`);
+          const input = currentQuestion.querySelector('input');
+          if (input) {
+            answers[input.name] = input.value;
+          }
+
+          currentQuestionIndex++;
+          showQuestion(currentQuestionIndex);
+
+          // Update the summary
+          updateSummary();
+        } else if (currentQuestionIndex === questions.length - 1) {
+          // Save the final answer
+          const finalQuestion = document.querySelector(`#question-${currentQuestionIndex + 1}`);
+          const input = finalQuestion.querySelector('input');
+          if (input) {
+            answers[input.name] = input.value;
+          }
+
+          // Update the summary and show it
+          updateSummary();
+          document.querySelector('#question-submit').style.display = 'block';
+        }
+      }
+
+      function goBack() {
+        if (currentQuestionIndex > 0) {
+          currentQuestionIndex--;
+          showQuestion(currentQuestionIndex);
+
+          // Update the summary
+          updateSummary();
+        }
+      }
+
+      function updateSummary() {
+        summaryContent.innerHTML = ''; // Clear previous summary content
+        Object.entries(answers).forEach(([key, value]) => {
+          const formattedKey = key.replace(/_/g, ' ')
+                                  .replace(/\b\w/g, c => c.toUpperCase());
+          summaryContent.innerHTML += `<p><strong>${formattedKey}:</strong> ${value}</p>`;
+        });
+      }
+
+      function handleInputChange(event) {
+        answers[event.target.name] = event.target.value;
+        updateSummary(); // Update summary immediately when input changes
+      }
+
+      buttonYes.addEventListener('click', function () {
+        content.style.display = 'none';
+        form.style.display = 'block';
+        showQuestion(currentQuestionIndex);
+      });
+
+      buttonNo.addEventListener('click', function () {
+        content.style.display = 'none';
+        warning.style.display = 'block';
+      });
+
+      // Attach event listeners to the buttons
+      document.querySelectorAll('.next-button').forEach(button => {
+        button.addEventListener('click', function(event) {
+          event.preventDefault();
+          goNext();
+        });
+      });
+
+      document.querySelectorAll('.back-button').forEach(button => {
+        button.addEventListener('click', function(event) {
+          event.preventDefault();
+          goBack();
+        });
+      });
+
+      // Initially show the first question
+      showQuestion(currentQuestionIndex);
+
+      submit.addEventListener('click', function () {
+        form.style.display = 'none';
+        receipt.style.display = 'block';
+      });
+
+      document.querySelector('.accept').addEventListener('click', function () {
+        warning.style.display = 'none';
+        form.style.display = 'block';
+        showQuestion(currentQuestionIndex);
+      });
+
+
+      form.addEventListener('keydown', function (event) {
+        if (event.key === 'Enter') {
+          event.preventDefault(); // Prevent form submission on Enter key
+          goNext();
+        }
+      });
+
+      form.addEventListener('change', handleInputChange);
+    });
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #E8F1FC, #D6E9FA); 
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; 
+            animation: fadeIn 1s ease-out;
+        }
+
+        .container {
+            text-align: center;
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            width: 600px;
+            animation: slideIn 1s ease-out; 
+        }
+
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .logo-container img {
+            width: 100px;  
+            height: 100px; 
+            margin-right: 20px;
+            animation: fadeIn 1.5s ease-out; 
+        }
+
+        .logo-container h1 {
+            font-size: 48px;  
+            color: #333;
+            font-weight: 600;
+            margin: 0;
+            animation: fadeIn 1.5s ease-out; 
+        }
+
+        .btn {
+          border: none;
+          width: 12em; 
+          height: 4em; 
+          border-radius: 3em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 12px;
+          background: #1C1A1C;
+          cursor: pointer;
+          transition: all 450ms ease-in-out;
+          margin: 20px auto; 
+          text-decoration: none; 
+          animation: fadeIn 2s ease-out; /*Fade-in effect*/
+        }
+
+        .sparkle {
+          fill: #AAAAAA;
+          transition: all 800ms ease;
+        }
+
+        .text {
+          font-weight: 600;
+          color: #AAAAAA;
+          font-size: medium;
+        }
+        /*hovering*/ 
+        .btn:hover {
+          background: linear-gradient(0deg, #5BC0EB, #0074D9); 
+          box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.4),
+          inset 0px -4px 0px 0px rgba(0, 0, 0, 0.2),
+          0px 0px 0px 4px rgba(255, 255, 255, 0.2),
+          0px 0px 180px 0px #00A8E8;
+          transform: translateY(-2px);
+        }
+
+        .btn:hover .text {
+          color: white;
+        }
+
+        .btn:hover .sparkle {
+          fill: white;
+          transform: scale(1.2);
+        }
+
+        .care-options {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px; /*Added gap between the items*/
+            margin-top: 40px; /*Increased space above this section*/
+            margin-bottom: 30px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 15px;
+            animation: fadeIn 2.5s ease-out; /*Fade-in effect*/
+        }
+
+        .care-option {
+            width: 45%;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            font-size: 14px;
+            color: #333;
+            transition: transform 0.3s ease; /*Hover effect again*/
+        }
+
+        .care-option:hover {
+            transform: translateY(-5px); /*Hover lift effect*/
+        }
+
+        .note-container {
+            background-color: #f4f4f4;
+            border-left: 5px solid #D6E9FA;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            font-size: 14px;
+            color: #333;
+            animation: fadeIn 3s ease-out; 
+        }
+
+        .note-container img {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+            margin-right: 10px;
+            position: relative;
+            top: -2px; 
+        }
+    </style>
+    <title>SwiftER Search</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo-container">
+        <img src="./Pictures/logo.png" alt="SwiftER Logo">
+        <h1>SwiftER</h1>
+    </div>
+    
+    <a href="map.html" class="btn">
+        <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+            <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
+        </svg>
+        <span class="text">View Map</span>
+    </a>
+    
+    <div class="care-options">
+        <div class="care-option">
+            <strong> Ontario Health</strong>
+            <p>Looking for health services? Visit Ontario Health for more accurate information about healhcare in Ontario!</p>
+        </div>
+        <div class="care-option">
+            <strong>Emergency Services</strong>
+            <p>Police, Ambulance and Firefighters are always at your disposable. Contact 911 whenever there is a life-threatening emergency. </p>
+        </div>
+    </div>
+
+    <div class="note-container">
+        <p><img src="./Pictures/exclamation 2.png" alt="Note Icon"><strong>Please Note:</strong> Our service updates wait times with a <strong>10-minute delay</strong>. For urgent medical attention, call <strong>911</strong> or visit the nearest emergency department immediately. For health advice, call <strong>811</strong> to speak to a health services navigator.</p>
+    </div>
+</div>
+
+</body>
+</html>

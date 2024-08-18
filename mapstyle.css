@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+}
+
+#map {
+  flex: 1;
+  height: 100vh;
+}
+
+#sidebar {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  width: 700px;
+  height: calc(100vh - 100px);
+  overflow-y: auto;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(15px);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+#sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+#sidebar {
+  scroll-behavior: smooth;
+}
+
+#pinList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-item {
+  background-color: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-item:hover {
+  background-color: rgba(255,255,255,0.05);
+}
+
+.sidebar-content p {
+  margin: 5px 0 0;
+  color: #666;
+  font-family: Helvetica;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebar-content h3 {
+  margin: 0;
+  font-size: 20px;
+  font-family: Helvetica;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.wait-time {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  margin-left: 0px;
+  text-align: right;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.button {
+  background-color: rgba(74,135,255,0.13);
+  color: #004a87;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  flex: 1;
+  margin: 0 5px;
+  font-family: Helvetica;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: rgba(74,135,255,0.8);
+  color: #FFFFFF;
+}
+
+.marker {
+  background-image: url('./Pictures/pin.png');
+  background-size: cover;
+  width: 55px;
+  height: 70px;
+  position: absolute;
+  transform: translate(-50%, -200%);
+}
+
+
+.marker-text {
+  position: absolute;
+  bottom: 30px; /*position inside the pin*/
+  width: 100%;
+  font-size: 11px;
+  font-weight: bold;
+  color: #FFFFFF; /*Adjust text color*/
+  text-align: center;
+  border-radius: 5px; 
+}
+
+.highlight {
+  border: 3px solid #004a87; 
+  background-color: #f0f8ff; 
+}
+
+
