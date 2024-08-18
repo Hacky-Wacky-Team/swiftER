@@ -26,7 +26,7 @@ main {
   justify-content: center;
   align-items: left;
   padding: 4rem 2rem;
-  text-align: left; /* Align text to the left */
+  text-align: left;
 }
 
 .code {
@@ -153,10 +153,9 @@ main {
 /* button thing */
 .button-container1 {
   display: flex;
-  justify-content: left; /* Center buttons horizontally */
-  gap: 10px; /* Space between buttons */
+  justify-content: left;
+  gap: 10px;
 }
-
 .button_yes,
 .button_no {
   display: flex;
@@ -165,17 +164,15 @@ main {
   padding: 8px 12px 8px 16px;
   gap: 8px;
   height: 40px;
-  width: 100px; /* Adjust width as needed */
+  width: 100px;
   border: none;
   border-radius: 20px;
   cursor: pointer;
   font-weight: bold;
 }
-
 .button_yes {
   background: #0433ff27;
 }
-
 .button_no {
   background: #ff260027;
 }
@@ -313,16 +310,17 @@ main {
   display: block;
   margin: 10px 0;
   font-size: 20px;
-  color: #919191; /* Adjust color as needed */
+  color: #919191;
   cursor: pointer;
-  text-decoration: none; /* Remove default underline */
+  text-decoration: none;
 }
 
 .button_back:hover {
-  color: #000000; /* Adjust hover color as needed */
-  text-decoration: underline; /* Underline on hover */
+  color: #000000;
+  text-decoration: underline;
 }
 
+/*SUMMARY STUFF*/
 .summary-container {
   padding: 35px;
   border: 1px solid #eaeaea;
@@ -382,7 +380,7 @@ h3 {
   font-family: Helvetica;
 }
 
-
+/*The Confirmation TIcket*/
 /* From Uiverse.io by satyamchaudharydev */ 
 .receipt {
  --primary-clr: #1C204B;
@@ -463,6 +461,7 @@ h3 {
  font-size: 1.4em;
 }
 
+/*Back and Next Buttons*/
 /* From Uiverse.io by andrew-demchenk0 */ 
 .button {
   display: flex;
