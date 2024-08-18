@@ -45,8 +45,12 @@ def get_data():
                 if not sorted_items_list[i+1].startswith("Closed"):
                     hospital_name = sorted_items_list[i]
                     times = sorted_items_list[i+1].split(" ")
-                    wait_time = times[0] + 'h ' + times[2] + 'm'
-                    data[hospital_name] = wait_time
+                    if times[3] != "less":
+                        wait_time = times[0] + 'h ' + times[2] + 'm'
+                        data[hospital_name] = wait_time
+                    else:
+                        wait_time = times[0] + 'h or less'
+                        data[hospital_name] = wait_time
 
         info = []
         try:
