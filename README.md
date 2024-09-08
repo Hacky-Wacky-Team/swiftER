@@ -19,5 +19,8 @@ For the wait times, we decided to use selenium to scrape the data. Using python 
 ### Pre-Screening Section
 After the user selects the hospital, they are able to complete that specific hospital's prescreening. The user is prompted first with a confirmation question, ensuring that they understand that the ER is for emergencies only. They are also given different alternatives for help such as Ontario's 811. If they still need emergency care, they are able to answer the list of prescreening questions, including: Health Card Number, Symptoms, Date of Birth, Name, etc. Upon completing the questions, a ticket is generated for the user with a waiting number. This allows the user to wait in the comfort of their own home instead of the ER waiting room which is often overcrowded. (Unfortunately, because SwiftER is not implemented in any hospitals, this feature is just an example)
 
+![swiftER](https://github.com/user-attachments/assets/9dcb153c-6dcd-4f8c-990d-d8b479fbf3c4)
+
+
 ## What's next for SwiftER
 We hope to incorporate SwiftER with Ontario’s healthcare system. This is our biggest goal, and a goal we truly hope to accomplish as we are aware of the struggles people face with the waiting times of the Emergency Room. To do this, we hope to better improve the functionality of SwiftER by fixing parts of the map and fully integrating the pre-screening process to actually connect it to local hospitals around Ontario!
