@@ -3,8 +3,6 @@
     <h1>SwiftER</h1>
 </div>
 
-# SwiftER
-
 Decrease ER wait times once and for all!!!
 
 
