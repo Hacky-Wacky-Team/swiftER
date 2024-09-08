@@ -1,9 +1,10 @@
 <div align="center">
     <img src="Pictures/Logo.png" width=200 height=200>
     <h1>SwiftER</h1>
+    <h2>Decrease ER wait times once and for all!</h2>
 </div>
 
-Decrease ER wait times once and for all!!!
+Decrease ER wait times once and for all!
 
 
 ## ⭐️ Inspiration
