@@ -3,7 +3,7 @@
     <h1>SwiftER</h1>
 </div>
 
-> Decrease ER wait times once and for all!
+Decrease ER wait times once and for all!
 
 
 ## ⭐️ Inspiration
