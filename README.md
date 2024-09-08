@@ -1,3 +1,8 @@
+<div align="center">
+    <img src="Ice/Pictures/Logo.png" width=200 height=200>
+    <h1>SwiftER</h1>
+</div>
+
 # SwiftER
 
 Decrease ER wait times once and for all!!!
