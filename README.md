@@ -7,12 +7,15 @@ Decrease ER wait times once and for all!
 
 
 ## ⭐️ Inspiration
-Picture this: a stuffy room filled with strangers who are all sick and hopelessly waiting for a doctor. This unfortunately is the reality of hundreds of thousands of Ontarionians each day. Ontario’s healthcare system is prized for its accessibility due to its free healthcare, however there are flaws to every system. Ontario is plagued by the lack of resources to streamline proper care of patients who are in need of emergency aid. With this, our team decided to come up with SwiftER, a WebApp that allows users to track live waiting times and initiate the pre-screening process before arriving at the hospital. With this, we hope to make the lives of Ontarionian’s better each day. As people who have dealt with the firsthand effects of the Emergency Room, we believe that SwiftER has the possibility of shaping Ontario’s healthcare into a system that supports everyone regardless of their background.
+Picture this: a stuffy room filled with strangers who are all sick and hopelessly waiting for a doctor. This unfortunately is the reality of hundreds of thousands of Ontarionians each day. Ontario’s healthcare system is prized for its accessibility due to its free healthcare, however there are flaws to every system. Ontario is plagued by the lack of resources to streamline proper care of patients who are in need of emergency aid. With this, we decided to come up with SwiftER, a WebApp that allows users to track live waiting times and initiate the pre-screening process before arriving at the hospital.We hope to make the lives of Ontarionian’s better each day. As people who have dealt with the firsthand effects of the Emergency Room, we believe that SwiftER has the possibility of shaping Ontario’s healthcare into a system that supports everyone regardless of their background.
 
 ## ❤️ What it does
 SwiftER enables users to easily access live waiting times of over 20 hospitals around the GTA and start their pre-screening questions before arriving at the hospital. With its easy to use interface, our platform allows anyone regardless of age to access it. Furthermore, users are able to contact these hospitals and visit crucial sites that may help a users decision in where to go when they need emergency aid. Our site successfully teaches users how to distinguish between the need to go to the ER and the need to utilize 811. Ultimately, SwiftER truly streamlines the process and we are confident that if it were integrated with Ontario’s healthcare system, it would improve the lives of thousands of people.
 
 ## 🛠️ Features
+
+<img width="1470" alt="homepage" src="https://github.com/user-attachments/assets/af6e68a8-0939-4b66-a992-1f1a4aad8daa">
+
 ### Map Section
 We decided to use MapBox API to display all the hospitals on an expansive full-screen map. The map is fully interactive, allowing users to easily see the 20+ hospitals across Ontario with their live wait times. The hospital data includes ER wait times, scraped from online sources, that dynamically update as new data is received.
 
