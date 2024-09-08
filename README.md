@@ -21,20 +21,3 @@ After the user selects the hospital, they are able to complete that specific hos
 
 ## What's next for SwiftER
 We hope to incorporate SwiftER with Ontario’s healthcare system. This is our biggest goal, and a goal we truly hope to accomplish as we are aware of the struggles people face with the waiting times of the Emergency Room. To do this, we hope to better improve the functionality of SwiftER by fixing parts of the map and fully integrating the pre-screening process to actually connect it to local hospitals around Ontario!
-
-## 📋 Roadmap
-- [x] Proper notch sizing and animations 📐
-- [x] Delayed notch opening ⏲️
-- [x] Charging indicator and current percentage 🔋
-- [x] Playback live activity 🎧
-- [ ] Clipboard history manager 📌 `Coming soon`
-- [ ] Customizable function buttons 🎛️ `Coming soon`
-- [ ] Shelf functionality with AirDrop 📚 `Coming soon`
-- [ ] System HUD replacements (volume, brightness, backlight) 🎚️💡⌨️ `Coming soon`
-- [ ] Download indicator of different browsers (Safari, Chromium browsers, Firefox) 🌍 `Coming soon`
-- [ ] Layout customization options 🛠️
-- [ ] Notch sizing customization, finetuning on different display sizes 🖥️
-- [ ] Calendar integration 📆
-- [ ] App switcher 🪄
-- [ ] Customizable gesture control 👆🏻 `Coming soon`
-- [ ] Notifications (under consideration) 🔔
