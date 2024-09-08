@@ -13,6 +13,8 @@ SwiftER enables users to easily access live waiting times of over 20 hospitals a
 ### Map Section
 We decided to use MapBox API to display all the hospitals on an expansive full-screen map. The map is fully interactive, allowing users to easily see the 20+ hospitals across Ontario with their live wait times. The hospital data includes ER wait times, scraped from online sources, that dynamically update as new data is received.
 
+https://github.com/user-attachments/assets/9fb0d9f5-8e03-4267-98a0-356726801ddc
+
 ### Backend
 For the wait times, we decided to use selenium to scrape the data. Using python we went through the data and set it into the format that is used for the map. To connect the data gathered by python and our front end we sent the data to a JSON file and fetched it using javascript.
 
