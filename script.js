@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //THIS DIDN'T WORK :(
         //const mySecret = process.env['MAPS_API_KEY']
         //DONE STELA THIS GUYS PLEASE (i will die)
-        mapboxgl.accessToken = 'pk.eyJ1Ijoiam9ubnlvIiwiYSI6ImNsenlmamY2bjExZzgybHE0MzRkb21rNTMifQ.66c7t6FBoih2z_rz26SECA';
+        mapboxgl.accessToken = MAPBOX_API_KEY;
 
         //create geojson with data from points 
         const geojson = {
