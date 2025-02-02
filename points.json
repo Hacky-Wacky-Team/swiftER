@@ -12,7 +12,7 @@
     },
     "properties": {
       "title": "Etobicoke (William Osler Health System)",
-      "description": "1h 50m",
+      "description": "1h 20m",
       "address": "101 Humber College Blvd, Etobicoke, ON M9V 1R8"
     }
   },
@@ -29,8 +29,25 @@
     },
     "properties": {
       "title": "Brampton Civic (William Osler Health System)",
-      "description": "2h 45m",
+      "description": "1h 40m",
       "address": "2100 Bovaird Dr E, Brampton, ON L6R 3J7"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        [
+          -79.774318,
+          43.221876
+        ]
+      ]
+    },
+    "properties": {
+      "title": "King Campus Urgent Care, St. Joseph\u2019s Healthcare Hamilton",
+      "description": "1h 8m",
+      "address": "100 King St W, Hamilton, ON L8N 3W8"
     }
   },
   {
@@ -46,7 +63,7 @@
     },
     "properties": {
       "title": "St. Joseph\u2019s Healthcare Hamilton, Charlton Campus",
-      "description": "1h 21m",
+      "description": "1h 12m",
       "address": "50 Charlton Ave E, Hamilton, ON L8N 4A6"
     }
   },
@@ -63,8 +80,25 @@
     },
     "properties": {
       "title": "Milton District (Halton Healthcare)",
-      "description": "1h 56m",
+      "description": "4h 32m",
       "address": "7030 Derry Rd, Milton, ON L9T 7H6"
+    }
+  },
+  {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        [
+          -79.898178,
+          43.260189
+        ]
+      ]
+    },
+    "properties": {
+      "title": "West End Urgent Care Centre",
+      "description": "2h 23m",
+      "address": "690 Main St W, Hamilton, ON L8S 1A4"
     }
   },
   {
@@ -80,7 +114,7 @@
     },
     "properties": {
       "title": "McMaster Children\u2019s Hospital",
-      "description": "0h 50m",
+      "description": "1h 36m",
       "address": "1200 Main St W, Hamilton, ON L8N 3Z5"
     }
   },
@@ -97,7 +131,7 @@
     },
     "properties": {
       "title": "Peel Memorial Urgent Care (William Osler Health System)",
-      "description": "2h 55m",
+      "description": "1h 52m",
       "address": "20 Lynch St, Brampton, ON L6W 2Z8"
     }
   },
@@ -114,7 +148,7 @@
     },
     "properties": {
       "title": "Oshawa (Lakeridge Health)",
-      "description": "3h 22m",
+      "description": "2h 0m",
       "address": "1 Hospital Ct, Oshawa, ON L1G 2B9"
     }
   },
@@ -131,25 +165,8 @@
     },
     "properties": {
       "title": "West Lincoln Memorial Hospital",
-      "description": "1h 45m",
+      "description": "1h 43m",
       "address": "169 Main St E, Grimsby, ON L3M 1P3"
-    }
-  },
-  {
-    "type": "Feature",
-    "geometry": {
-      "type": "Point",
-      "coordinates": [
-        [
-          -80.328084,
-          43.378416
-        ]
-      ]
-    },
-    "properties": {
-      "title": "Cambridge Memorial",
-      "description": "5h 01m",
-      "address": "700 Coronation Blvd, Cambridge, ON N1R 3G2"
     }
   },
   {
@@ -165,7 +182,7 @@
     },
     "properties": {
       "title": "Uxbridge (Oak Valley Health)",
-      "description": "2h 30m",
+      "description": "1h 30m",
       "address": "1 Campbell Dr, Uxbridge, ON L9P 1R1"
     }
   },
@@ -182,7 +199,7 @@
     },
     "properties": {
       "title": "Juravinski Hospital and Cancer Centre",
-      "description": "2h 49m",
+      "description": "3h 17m",
       "address": "711 Concession St, Hamilton, ON L8V 1C3"
     }
   },
@@ -199,7 +216,7 @@
     },
     "properties": {
       "title": "Toronto Western (University Health Network)",
-      "description": "1h 19m",
+      "description": "4h 6m",
       "address": "399 Bathurst St, Toronto, ON M5T 2S8"
     }
   },
@@ -216,7 +233,7 @@
     },
     "properties": {
       "title": "Bowmanville (Lakeridge Health)",
-      "description": "2h 37m",
+      "description": "2h 5m",
       "address": "47 Liberty St S, Bowmanville, ON L1C 2N4"
     }
   },
@@ -233,7 +250,7 @@
     },
     "properties": {
       "title": "Markham Stouffville (Oak Valley Health)",
-      "description": "1h 30m",
+      "description": "3h 0m",
       "address": "381 Church St, Markham, ON L6B 1A1"
     }
   },
@@ -250,7 +267,7 @@
     },
     "properties": {
       "title": "Toronto General (University Health Network)",
-      "description": "3h 17m",
+      "description": "3h 9m",
       "address": "200 Elizabeth St, Toronto, ON M5G 2C4"
     }
   },
@@ -267,7 +284,7 @@
     },
     "properties": {
       "title": "Ajax (Lakeridge Health)",
-      "description": "3h 23m",
+      "description": "3h 17m",
       "address": "580 Harwood Ave S, Ajax, ON L1S 2J4"
     }
   },
@@ -284,7 +301,7 @@
     },
     "properties": {
       "title": "Hamilton General Hospital",
-      "description": "3h 34m",
+      "description": "1h 57m",
       "address": "237 Barton St E, Hamilton, ON L8L 2X2"
     }
   },
@@ -301,7 +318,7 @@
     },
     "properties": {
       "title": "Port Perry (Lakeridge Health)",
-      "description": "1h orm",
+      "description": "1h 59m",
       "address": "451 Paxton St, Port Perry, ON L9L 1M2"
     }
   },
@@ -318,7 +335,7 @@
     },
     "properties": {
       "title": "CHEO (Childrens Hospital of Eastern Ontario)",
-      "description": "7h 20m",
+      "description": "14h 03m",
       "address": "401 Smyth Rd, Ottawa, ON K1H 8L1"
     }
   },
@@ -335,7 +352,7 @@
     },
     "properties": {
       "title": "Georgetown (Halton Healthcare)",
-      "description": "3h 1m",
+      "description": "3h 6m",
       "address": "1 Princess Anne Dr, Georgetown, ON L7G 2B8"
     }
   },
@@ -352,7 +369,7 @@
     },
     "properties": {
       "title": "Oakville Trafalgar Memorial (Halton Healthcare)",
-      "description": "4h 44m",
+      "description": "2h 13m",
       "address": "327 Reynolds St, Oakville, ON L6J 3L7"
     }
   },
@@ -369,7 +386,7 @@
     },
     "properties": {
       "title": "Sunnybrook",
-      "description": "7h 48m",
+      "description": "9h 23m",
       "address": "2075 Bayview Ave, Toronto, ON M4N 3M5"
     }
   }

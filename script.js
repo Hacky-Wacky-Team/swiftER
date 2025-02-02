@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  
   const fetchData = () => {
     fetch('/points.json')
       .then(response => response.json())
@@ -6,9 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(points);
 
         //THIS DIDN'T WORK :(
-        //const mySecret = process.env['MAPS_API_KEY']
-        //DONE STELA THIS GUYS PLEASE (i will die)
-        mapboxgl.accessToken = MAPBOX_API_KEY;
+        // REPLACE manually with the key
+        mapboxgl.accessToken = MAPS_API_KEY;
 
         //create geojson with data from points 
         const geojson = {
@@ -74,7 +74,15 @@ document.addEventListener('DOMContentLoaded', () => {
                   alert('Calling hospital: ' + feature.properties.title);
                   break;
                 case 'directions':
-                  alert('Getting directions to: ' + feature.properties.title);
+                  //OLD CODE BELOW
+                  // alert('Getting directions to: ' + feature.properties.title);
+                  // break;
+
+                  const coordinates = feature.geometry.coordinates[0];
+                  const lat = coordinates[1];
+                  const lng = coordinates[0];
+                  const googleMapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+                  window.open(googleMapsUrl, '_blank');
                   break;
               }
             });

@@ -365,6 +365,7 @@ main {
   text-align: left;
 }
 
+
 p {
   margin: 0;
   max-width: 650px;
@@ -382,6 +383,15 @@ h3 {
 
 /*The Confirmation TIcket*/
 /* From Uiverse.io by satyamchaudharydev */ 
+
+.no-ER {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+  font-family: "Helvetica";
+  color: #000000;
+}
+
 .receipt {
  --primary-clr: #1C204B;
  --dot-clr: #BBC0FF;
@@ -474,8 +484,10 @@ h3 {
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  font-family: sans-serif;
   letter-spacing: 1px;
+  font-family: "Helvetica";
+
+
 }
 
 .lable {
@@ -493,12 +505,28 @@ h3 {
   background: #056bfa27;
   color: #056dfa;
 }
+.next-button:hover {
+  background: #056bfa49;
+}
+
 
 .back-button:hover {
   background: #0433ff49;
 }
 
-.next-button:hover {
+.home-button {
+  background: #0433ff27;
+  color: #0433ff;
+}
+.home-button:hover {
+  background: #0433ff49;
+}
+
+.proceed-button {
+  background: #056bfa27;
+  color: #056dfa;
+}
+.proceed-button:hover {
   background: #056bfa49;
 }
 
@@ -530,7 +558,19 @@ h3 {
   width: 300px;
   margin: 20px auto;
   margin-top: -50px;
+
 }
+
+.end-button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin: 20px auto;
+  margin-top: 10px;
+
+}
+
+
 
 /* Add styles for the submit question container */
 .question-container#question-submit .button-container {

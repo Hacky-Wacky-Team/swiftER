@@ -30,7 +30,7 @@
       "coordinates": [-79.774318, 43.221876]
     },
     "properties": {
-      "title": "King Campus Urgent Care, St. Joseph’s Healthcare Hamilton",
+      "title": "King Campus Urgent Care, St. Joseph\u2019s Healthcare Hamilton",
       "description": "1 hr 4 min",
       "address": "100 King St W, Hamilton, ON L8N 3W8"
     }
@@ -42,7 +42,7 @@
       "coordinates": [-79.872054, 43.249015]
     },
     "properties": {
-      "title": "St. Joseph’s Healthcare Hamilton, Charlton Campus",
+      "title": "St. Joseph\u2019s Healthcare Hamilton, Charlton Campus",
       "description": "1 hr 7 min",
       "address": "50 Charlton Ave E, Hamilton, ON L8N 4A6"
     }
@@ -78,7 +78,7 @@
       "coordinates": [-79.917496, 43.259091]
     },
     "properties": {
-      "title": "McMaster Children’s Hospital",
+      "title": "McMaster Children\u2019s Hospital",
       "description": "1 hr 36 min",
       "address": "1200 Main St W, Hamilton, ON L8N 3Z5"
     }

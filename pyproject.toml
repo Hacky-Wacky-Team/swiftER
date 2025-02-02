@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "repl-nix-hospital-timer-gone"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+selenium = "^4.23.1"
+flask = "^3.1.0"
+flask-cors = "^5.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
