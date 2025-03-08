@@ -5,6 +5,10 @@
 
 Decrease ER wait times once and for all!
 
+Devpost: https://devpost.com/software/swifter-vleyic
+
+Video Demo: https://youtu.be/jrorE0vLFqA
+
 
 ## ⭐️ Inspiration
 Picture this: an overcrowded room filled with patients who are waiting for a doctor. This unfortunately is the reality of hundreds of thousands of Ontarionians each day. Ontario’s healthcare system is prized for its accessibility due to its free healthcare, however there are flaws to every system. Ontario is plagued by the lack of resources to streamline proper care of patients who are in need of emergency aid. With this, we decided to come up with SwiftER, a WebApp that allows users to track live waiting times and initiate the pre-screening process before arriving at the hospital. We hope to make the lives of Ontarionian’s better each day. As people who have dealt with the firsthand effects of the Emergency Room, we believe that SwiftER has the possibility of shaping Ontario’s healthcare into a system that supports everyone regardless of their background.
